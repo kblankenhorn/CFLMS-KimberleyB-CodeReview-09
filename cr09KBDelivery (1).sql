@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 06, 2020 at 06:24 PM
+-- Generation Time: Nov 06, 2020 at 08:45 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.23
 
@@ -81,11 +81,10 @@ CREATE TABLE `endPost` (
 INSERT INTO `endPost` (`endId`, `name`, `postAddressId`) VALUES
 (1, 'Atlanta Post Office', 1),
 (2, 'Chicago Post Office', 2),
-(3, 'Atlanta Post Office', 1),
-(4, 'New York City Post Office', 3),
-(5, 'Saint Paul Post Office', 4),
-(6, 'Vienna Post Office', 5),
-(7, 'Paris Post Office', 6);
+(3, 'New York Post Office', 3),
+(4, 'Saint Paul Post Office', 4),
+(5, 'Vienna Post Office', 5),
+(6, 'Paris Post Office', 6);
 
 -- --------------------------------------------------------
 
@@ -378,7 +377,8 @@ ALTER TABLE `startPost`
 -- Constraints for table `endPost`
 --
 ALTER TABLE `endPost`
-  ADD CONSTRAINT `endpost_ibfk_3` FOREIGN KEY (`postAddressId`) REFERENCES `postaddress` (`postAddressId`);
+  ADD CONSTRAINT `endpost_ibfk_3` FOREIGN KEY (`postAddressId`) REFERENCES `post`.`postAddress` (`postAddressId`),
+  ADD CONSTRAINT `endpost_ibfk_4` FOREIGN KEY (`postAddressId`) REFERENCES `postAddress` (`postAddressId`);
 
 --
 -- Constraints for table `package`
